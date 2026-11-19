@@ -576,7 +576,7 @@ html[data-v] #fasol-site .fs-map{border-color:var(--fs-line-strong)}
   html[data-v] #fasol-site .fs-map{margin:0;border:1px solid var(--fs-line-strong)}
 }
 
-#fasol-site #fs-menu-content img{transition:opacity .35s ease}
+#fasol-site #fs-menu-content img{transition:opacity .35s ease,transform var(--fs-pz,.6s) var(--fs-pe,ease)}
 #fasol-site #fs-menu-content img.fs-img-fade{opacity:0}
 
 html[data-v] #fasol-site .fs-kids-inline{width:100%;margin-top:28px;border-top:1px solid var(--fs-line)}
@@ -1317,6 +1317,17 @@ html[data-v] #fasol-site #fs-menu-dialog[data-catalog-style=b] .fs-dish-desc::fi
   html[data-v] #fasol-site #fs-menu-dialog[data-catalog-style=b] .fs-dishes .fs-dish .fst-buy{align-self:center}
   html[data-v] #fasol-site #fs-menu-dialog[data-catalog-style=b] .fs-dishes .fs-dish .fst-buy>:is(.fst-add,.fst-stepper){margin-top:16px}
 }
+
+:where(#fasol-site) :where(a,button,[role=button],summary,label,.fst-choice,.fs-dish),
+:where(#fasol-site) :where(a,button,[role=button],summary,label)::before,
+:where(#fasol-site) :where(a,button,[role=button],summary,label)::after,
+:where(#fasol-site) :where(a,button,[role=button]) :where(svg,path,img,span){
+  transition-property:color,background-color,border-color,opacity,transform,box-shadow,text-decoration-color,fill,stroke,filter;
+  transition-duration:var(--fs-pt,.32s);transition-timing-function:var(--fs-pe,ease)}
+@media(prefers-reduced-motion:reduce){
+  :where(#fasol-site) :where(a,button,[role=button],summary,label,.fst-choice,.fs-dish),
+  :where(#fasol-site) :where(a,button,[role=button],summary,label)::before,
+  :where(#fasol-site) :where(a,button,[role=button],summary,label)::after{transition-duration:.01ms}}
 
 html[data-v] #fasol-site #fs-menu-dialog:not([data-fst]) #fs-menu-content{padding-top:20px}
 html[data-v] #fasol-site #fs-menu-dialog:not([data-fst]) .fs-menu-hours{margin-bottom:16px}
