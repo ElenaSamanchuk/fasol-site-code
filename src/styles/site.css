@@ -531,8 +531,10 @@ html[data-v] #fasol-site .fs-usp p{margin:0;font:400 15px/1.55 var(--fs-sans);co
 @media(prefers-reduced-motion:no-preference){
   #fasol-site dialog{opacity:0;transition:opacity .32s var(--fs-ease),transform .32s var(--fs-ease),overlay .32s allow-discrete,display .32s allow-discrete}
   #fasol-site dialog[open]{opacity:1}
+
+  #fasol-site dialog[open]{transition-property:opacity,transform}
   #fasol-site dialog::backdrop{opacity:0;transition:opacity .32s var(--fs-ease),overlay .32s allow-discrete,display .32s allow-discrete}
-  #fasol-site dialog[open]::backdrop{opacity:1}
+  #fasol-site dialog[open]::backdrop{opacity:1;transition-property:opacity}
   @starting-style{
     #fasol-site dialog[open]{opacity:0}
     #fasol-site dialog[open]::backdrop{opacity:0}
